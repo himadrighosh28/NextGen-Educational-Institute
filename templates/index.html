@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}NextGen Educational Institute{% endblock %}
+
+{% block content %}
+
+	<div class="admission-alert">
+        <span aria-hidden="true">📢</span>
+        <a href="{{ url_for('admissions') }}" class="admission-alert-link">
+            Applications are now open for the next academic session! Click here to apply!
+        </a>
+	</div>
+
+	<section class="home-intro">
+        <h2>Welcome to NextGen Educational Institute</h2>
+            <p>At NextGen Educational Institute, learning goes beyond the classroom. We inspire young minds to explore, create, question, and grow with confidence. Through meaningful learning experiences and a supportive environment, we help students discover their potential and prepare to make a positive difference in the world.</p>
+    </section>
+
+	<div class="slideshow">
+        <div class="slideshow-track">
+            <img src="{{ url_for('static', filename='images/school-banner.png') }}">
+            <img src="{{ url_for('static', filename='images/school-image.png') }}">
+            <img src="{{ url_for('static', filename='images/illustration.png') }}">
+			<img src="{{ url_for('static', filename='images/students-learning.jpg') }}">
+			<img src="{{ url_for('static', filename='images/students-sports.jpg') }}">
+            <img src="{{ url_for('static', filename='images/school-banner.png') }}">
+            <img src="{{ url_for('static', filename='images/school-image.png') }}">
+            <img src="{{ url_for('static', filename='images/illustration.png') }}">
+			<img src="{{ url_for('static', filename='images/students-learning.jpg') }}">
+			<img src="{{ url_for('static', filename='images/students-sports.jpg') }}">
+        </div>
+	</div>
+
+	<section class="home-glance">
+        <h2>NextGen at a Glance</h2>
+            <div class="glance-container">
+                <div class="glance-item">
+                    <h3>Since 2000</h3>
+                        <p>Building a Legacy of Excellence</p>
+                </div>
+                <div class="glance-item">
+                    <h3>26+ Years</h3>
+                        <p>Shaping Young Minds</p>
+                </div>
+                <div class="glance-item">
+                    <h3>CISCE</h3>
+                        <p>Quality Education &amp; Strong Foundations</p>
+                </div>
+                <div class="glance-item">
+                    <h3>Co-educational</h3>
+                        <p>Growing Together, Learning Together</p>
+                </div>
+                <div class="glance-item">
+                    <h3>Classes</h3>
+                        <p>Play Group to Class XII</p>
+                </div>
+                <div class="glance-item">
+                    <h3>45 Faculty</h3>
+                        <p>Experienced & Dedicated Faculty</p>
+                </div>
+                <div class="glance-item">
+                    <h3>1,035 Students</h3>
+                        <p>A Vibrant Learning Community</p>
+                </div>
+                <div class="glance-item">
+                    <h3>23:1</h3>
+                        <p>Student–Teacher Ratio</p>
+                </div>
+            </div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose NextGen?</h2>
+            <div class="why-choose-container">
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">🎓</div>
+                    <h3>Quality Education</h3>
+                        <p>Building strong foundations for lifelong learning.</p>
+                </div>
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">👩‍🏫</div>
+                    <h3>Student Focus</h3>
+                        <p>Understanding and supporting every learner's potential.</p>
+                </div>
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">🌱</div>
+                    <h3>Holistic Growth</h3>
+                        <p>Nurturing confidence, creativity, character, and skills.</p>
+                </div>
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">🏫</div>
+                    <h3>Safe Environment</h3>
+                        <p>Creating a safe, supportive learning space.</p>
+                </div>
+            </div>
+    </section>
+
+{% endblock %}

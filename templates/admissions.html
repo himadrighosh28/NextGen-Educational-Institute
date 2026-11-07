@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Admissions - NextGen Educational Institute{% endblock %}
+
+{% block content %}
+
+	<section class="content">
+		<h2>ADMISSIONS</h2>
+			<p style="margin-bottom: 10px;">We are pleased to inform you that applications for admission to the upcoming academic session are currently being received at NextGen Educational Institute. Interested applicants and their parents/guardians are requested to download and carefully read the Admission Information & Guidelines before submitting the application form below.</p>
+			<p style="margin-bottom: 10px;">Please note that submitting an application does not guarantee admission. The admission process will be conducted in accordance with the institute's admission guidelines. Upon final admission, students will receive a comprehensive school booklet containing detailed, class-wise syllabuses, prescribed textbook information, school dress codes, codes of conduct, and class timings (routine) applicable to their respective classes.</p>
+			<p>For further updates and important information regarding the admission process, applicants are requested to regularly follow the <a href="{{ url_for('announcements') }}" class="{% if request.endpoint == 'announcements' %}active{% endif %}">ANNOUNCEMENTS</a> section of this website.</p>
+			<div class="links">
+				<a href="{{ url_for('static', filename='pdf/Admission_Information_and_Guidelines.pdf') }}" download>
+					<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+					<span>Admission Information & Guidelines</span>
+				</a>
+			</div>
+			<div id="application-section" class="application-section">
+				<h3>ENROLL AT NEXTGEN EDUCATIONAL INSTITUTE</h3>
+					{% with messages = get_flashed_messages(with_categories=true) %}
+						{% if messages %}
+							{% for category, message in messages %}
+								<div class="flash-message-wrapper">
+									<div class="flash-message {{ category }}">
+										{{ message }}
+									</div>
+									{% if category == "success" and session.get("application_token") %}
+										<a href="{{ url_for('application_acknowledgement', token=session.get('application_token')) }}" class="acknowledgement-btn">
+											<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+											DOWNLOAD ACKNOWLEDGEMENT
+										</a>
+									{% endif %}
+								</div>
+							{% endfor %}
+						{% endif %}
+					{% endwith %}
+					<form class="application-form" action="{{ url_for('admissions') }}" method="POST">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+						<div class="form-group">
+							<label for="full-name">Full Name</label>
+							<input type="text" id="full-name" name="full_name"
+								placeholder="Enter student's full name" required>
+						</div>
+						<div class="form-group">
+							<label for="guardian-name">Guardian's Name</label>
+							<input type="text" id="guardian-name" name="guardian_name"
+								placeholder="Enter guardian's full name" required>
+						</div>
+						<div class="form-group">
+							<label for="address">Address</label>
+							<textarea id="address" name="address" rows="4"
+								placeholder="Enter student's complete address" required></textarea>
+						</div>
+						<div class="form-group">
+							<label for="dob">Date of Birth</label>
+							<input type="date" id="dob" name="dob" required>
+						</div>
+						<div class="form-group">
+							<label for="class">Class Applying For</label>
+							<select id="class" name="class" required>
+								<option value="" selected disabled>Select a Class</option>
+								<option value="play-group">Play Group</option>
+								<option value="nursery">Nursery</option>
+								<option value="lkg">LKG</option>
+								<option value="ukg">UKG</option>
+								<option value="class-1">Class I</option>
+								<option value="class-2">Class II</option>
+								<option value="class-3">Class III</option>
+								<option value="class-4">Class IV</option>
+								<option value="class-5">Class V</option>
+								<option value="class-6">Class VI</option>
+								<option value="class-7">Class VII</option>
+								<option value="class-8">Class VIII</option>
+								<option value="class-9">Class IX</option>
+								<option value="class-10">Class X</option>
+								<option value="class-11">Class XI</option>
+								<option value="class-12">Class XII</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="student-phone">Student's Phone Number</label>
+							<input type="tel" id="student-phone" name="student_phone"
+								pattern="[6-9][0-9]{9}" maxlength="10" inputmode="numeric"
+								placeholder="Enter student's 10-digit phone number (if any)">
+						</div>
+						<div class="form-group">
+							<label for="guardian-phone">Guardian's Phone Number</label>
+							<input type="tel" id="guardian-phone" name="guardian_phone"
+								pattern="[6-9][0-9]{9}" maxlength="10" inputmode="numeric"
+								placeholder="Enter guardian's 10-digit phone number" required>
+						</div>
+						<div class="form-group">
+							<label for="student-email">Student's Email ID</label>
+							<input type="email" id="student-email" name="student_email"
+								placeholder="Enter student's valid email address (if any)">
+						</div>
+						<div class="form-group">
+							<label for="guardian-email">Guardian's Email ID</label>
+							<input type="email" id="guardian-email" name="guardian_email"
+								placeholder="Enter guardian's valid email address" required>
+						</div>
+						<button type="submit" class="application-btn">SUBMIT APPLICATION</button>
+					</form>
+			</div>
+	</section>
+
+{% endblock %}

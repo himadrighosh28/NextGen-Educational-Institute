@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Application Verification - NextGen Educational Institute{% endblock %}
+
+{% block content %}
+
+    <section class="content">
+        <h2>VERIFICATION</h2>
+            {% if application %}
+                <div class="application-section">
+                    <h3>Application Verified</h3>
+                        <p><strong>Application Number:</strong> {{ application_number }}</p>
+                        <p><strong>Class Applying For:</strong> {{ applying_class }}</p>
+                        <p><strong>Submission Date:</strong> {{ application["submitted_at"] }}</p>
+                        <p>This application exists in the NextGen Educational Institute database.</p>
+                </div>
+            {% else %}
+                <div class="application-section">
+                    <h3>Application Not Found</h3>
+                        <p>The application could not be verified. Please check the QR code or contact the institute.</p>
+                </div>
+            {% endif %}
+    </section>
+    
+{% endblock %}

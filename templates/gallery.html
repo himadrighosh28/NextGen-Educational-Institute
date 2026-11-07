@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery - NextGen Educational Institute{% endblock %}
+
+{% block content %}
+
+	<section class="content">
+		<h2>GALLERY</h2>
+			<p style="margin-bottom: 0;">Browse through our heartwarming snapshots showcasing the bonds, activities, achievements, and memorable moments that shape our students' experiences. Our gallery reflects the spirit of creativity, confidence, and excellence that defines the NextGen community. Each moment highlights the passion, dedication, and determination that inspire our students to learn, grow, and achieve success.</p>
+				<div class="gallery-container">
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery1.jpg') }}" alt="Student giving a presentation on the map of India">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery2.jpg') }}" alt="Student building a robotics project">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery3.jpg') }}" alt="Students participating in a hands-on classroom learning activity">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery4.jpg') }}" alt="Students participating in a group activity">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery5.jpg') }}" alt="Students creating artwork during an art activity">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery6.jpg') }}" alt="Student performing piano at a school cultural event">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery7.jpg') }}" alt="Students performing a classical dance">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery8.jpg') }}" alt="Student performing in traditional cultural attire">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery9.jpg') }}" alt="Student dressed in traditional costume during a cultural event">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery10.jpg') }}" alt="Students participating in a yoga activity">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery11.jpg') }}" alt="Students playing basketball during a school sports event">
+					</div>
+					<div class="gallery-item">
+						<img src="{{ url_for('static', filename='images/gallery12.jpg') }}" alt="Student proudly holding an achievement trophy">
+					</div>
+				</div>
+	</section>
+
+{% endblock %}

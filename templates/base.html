@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{% block title %}NextGen Educational Institute{% endblock %}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<h1>NextGen Educational Institute</h1>
+		<h3>An Independent Co-educational School Following the CISCE Curriculum</h3>
+	</header>
+	<nav>
+		<a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">
+			HOME
+		</a>
+        <a href="{{ url_for('about_us') }}" class="{% if request.endpoint == 'about_us' %}active{% endif %}">
+            ABOUT US
+        </a>
+		<a href="{{ url_for('academics') }}" class="{% if request.endpoint == 'academics' %}active{% endif %}">
+			ACADEMICS
+        </a>
+		<a href="{{ url_for('admissions') }}" class="{% if request.endpoint == 'admissions' %}active{% endif %}">
+			ADMISSIONS
+		</a>
+		<a href="{{ url_for('announcements') }}" class="{% if request.endpoint == 'announcements' %}active{% endif %}">
+			ANNOUNCEMENTS
+		</a>
+		<a href="{{ url_for('facilities') }}" class="{% if request.endpoint == 'facilities' %}active{% endif %}">
+			FACILITIES
+		</a>
+		<a href="{{ url_for('gallery') }}" class="{% if request.endpoint == 'gallery' %}active{% endif %}">
+			GALLERY
+		</a>
+		<a href="{{ url_for('contact_us') }}" class="{% if request.endpoint == 'contact_us' %}active{% endif %}">
+			CONTACT US
+		</a>
+	</nav>
+	{% block content %}{% endblock %}
+	<footer>
+		<p>
+			&copy; 2000-2026 NextGen Educational Institute. All Rights Reserved.
+		</p>
+		<p>
+			<a href="{{ url_for('privacy_policy') }}" class="{% if request.endpoint == 'privacy_policy' %}active{% endif %}">Privacy Policy</a>
+		</p>
+	</footer>
+	<script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>

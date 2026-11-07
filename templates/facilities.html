@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Facilities - NextGen Educational Institute{% endblock %}
+
+{% block content %}
+
+	<section class="content">
+		<h2>OUR FACILITIES</h2>
+			<div class="card-container">
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Physics Laboratory</h3>
+					<img src="{{ url_for('static', filename='images/facilities1.jpg') }}" alt="Physics laboratory with scientific apparatus and experimental equipment">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Chemistry Laboratory</h3>
+					<img src="{{ url_for('static', filename='images/facilities2.jpg') }}" alt="Well-equipped chemistry laboratory with chemicals and laboratory equipment">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Biology Laboratory</h3>
+					<img src="{{ url_for('static', filename='images/facilities3.jpg') }}" alt="Biology laboratory with microscope, test tubes and scientific equipment">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Computer Laboratory</h3>
+					<img src="{{ url_for('static', filename='images/facilities4.jpg') }}" alt="Modern computer laboratory with multiple desktop computers">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Smart Classrooms</h3>
+					<img src="{{ url_for('static', filename='images/facilities5.jpg') }}" alt="Students learning in a technology-enabled smart classroom">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Library</h3>
+					<img src="{{ url_for('static', filename='images/facilities6.jpg') }}" alt="Modern school library with reading areas, books and study spaces">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Art and Creativity Studio</h3>
+					<img src="{{ url_for('static', filename='images/facilities7.jpg') }}" alt="Children creating artwork with paints, brushes and drawing materials">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Music Room</h3>
+					<img src="{{ url_for('static', filename='images/facilities8.jpg') }}" alt="Music room equipped with guitars and amplifiers">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Dance Studio</h3>
+					<img src="{{ url_for('static', filename='images/facilities9.jpg') }}" alt="Dancer performing a classical dance on stage">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Sports Facilities</h3>
+					<img src="{{ url_for('static', filename='images/facilities10.jpg') }}" alt="Indoor athletics track for sports and physical activities">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">Auditorium</h3>
+					<img src="{{ url_for('static', filename='images/facilities11.jpg') }}" alt="Spacious auditorium with seating and a stage for school events">
+				</div>
+				<div class="card">
+					<h3 class="card-title" style="margin-bottom: 15px;">School Cafeteria</h3>
+					<img src="{{ url_for('static', filename='images/facilities12.jpg') }}" alt="Modern school cafeteria with tables and seating">
+				</div>
+			</div>
+	</section>
+
+{% endblock %}
