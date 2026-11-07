@@ -1,8 +1,11 @@
 import sqlite3
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-DATABASE = BASE_DIR / "nextgen.db"
+DATABASE = Path(
+    os.environ.get("DATABASE_PATH", BASE_DIR / "nextgen.db")
+)
 
 def get_db_connection():
     connection = sqlite3.connect(DATABASE)
